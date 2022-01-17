@@ -3,16 +3,16 @@
 $ch = curl_init();
 
 #ИИН зашил в запросе. Но по-хорошему нужно доставать из процесса регистрации абонента
-curl_setopt($ch, CURLOPT_URL, 'https://ax.kisc.kz:8243/identity/1.1.0/verify?iin=880114301129&vendor=3');
+curl_setopt($ch, CURLOPT_URL, 'https://onlinetest.kisc.kz/identity/1.1.0/verify?iin=880114301129&vendor=3');
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 curl_setopt($ch, CURLOPT_POST, 1);
 curl_setopt($ch, CURLOPT_FOLLOWLOCATION, TRUE);
 curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 
 #Путь к отправляему изображению
-$photo = new CURLFile('/usr/src/myapp/1.jpg');
+//$photo = new CURLFile('/usr/src/myapp/1.jpg');
 
-$post = file_get_contents('/usr/src/myapp/Uahat.jpg');
+$post = file_get_contents('https://hhcdn.ru/photo/596835897.jpeg?t=1642487187&h=SxoTX5MVh39uKci-MbIzjg');
 
 curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
 
@@ -23,8 +23,8 @@ $headers[] = 'Content-Type: image/png';
 $headers[] = 'X-Idempotency-Key: 111995';
 curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 
-$keyFile = "/usr/src/myapp/test2.key";
-$certFile = "/usr/src/myapp/test2.cer";
+$keyFile = "test2.key";
+$certFile = "test2.cer";
 
 curl_setopt($ch, CURLOPT_SSLKEY, $keyFile);
 curl_setopt($ch, CURLOPT_SSLCERT, $certFile);
