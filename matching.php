@@ -3,7 +3,7 @@
 $ch = curl_init();
 
 #ИИН зашил в запросе. Но по-хорошему нужно доставать из процесса регистрации абонента
-curl_setopt($ch, CURLOPT_URL, 'https://onlinetest.kisc.kz/identity/1.1.0/verify?iin=880114301129&vendor=3');
+curl_setopt($ch, CURLOPT_URL, 'https://onlinetest.kisc.kz/identity/1.1.0/verify?iin=870324400444&vendor=3');
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 curl_setopt($ch, CURLOPT_POST, 1);
 curl_setopt($ch, CURLOPT_FOLLOWLOCATION, TRUE);
@@ -12,7 +12,7 @@ curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 #Путь к отправляему изображению
 //$photo = new CURLFile('/usr/src/myapp/1.jpg');
 
-$post = file_get_contents('https://avatars.mds.yandex.net/get-kinopoisk-image/1777765/7d4eb861-1f80-44da-b75e-7f365d0fc3da/280x420');
+$post = file_get_contents('https://zaymi.kz/docs/anna.jpeg');
 
 curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
 
