@@ -12,7 +12,7 @@ curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 #Путь к отправляему изображению
 //$photo = new CURLFile('/usr/src/myapp/1.jpg');
 
-$post = file_get_contents('https://hhcdn.ru/photo/596835897.jpeg?t=1642487187&h=SxoTX5MVh39uKci-MbIzjg');
+$post = file_get_contents('https://avatars.mds.yandex.net/get-kinopoisk-image/1777765/7d4eb861-1f80-44da-b75e-7f365d0fc3da/280x420');
 
 curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
 
