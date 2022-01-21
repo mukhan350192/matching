@@ -20,7 +20,8 @@ $headers = array();
 $headers[] = 'Authorization: Bearer 17a00568-5ce3-393d-80dd-1e0ba13114c2';
 $headers[] = 'Content-Type: image/png';
 #Уникальный ключ. Может буть любе число. Генерим сами
-$headers[] = 'X-Idempotency-Key: 111995';
+$rand = rand(100000,999999);
+$headers[] = 'X-Idempotency-Key: '.$rand;
 curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 
 $keyFile = "change.key";
