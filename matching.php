@@ -23,8 +23,8 @@ $headers[] = 'Content-Type: image/png';
 $headers[] = 'X-Idempotency-Key: 111995';
 curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 
-$keyFile = "test1.cer";
-$certFile = "test2.cer";
+$keyFile = "kets.key";
+$certFile = "certs.crt";
 
 curl_setopt($ch, CURLOPT_SSLKEY, $keyFile);
 curl_setopt($ch, CURLOPT_SSLCERT, $certFile);
